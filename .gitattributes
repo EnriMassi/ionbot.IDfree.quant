@@ -1,0 +1,2 @@
+# keep LF line endings: the scripts run on Linux, and bash fails on CRLF
+* text=auto eol=lf

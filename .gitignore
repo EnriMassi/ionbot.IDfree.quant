@@ -1,0 +1,20 @@
+# local helper scripts, not part of the published pipeline
+check-if-pxd.sh
+clear-empty-folders.py
+compare-folders.py
+
+# draft Python port of quant-from-mgfs.sh, not tested yet
+quant-from-mgfs.py
+
+# third-party binaries: download ThermoRawFileParser 1.3.4 from its GitHub releases
+ThermoRawFileParser/
+
+# list of projects to process (user-specific)
+pxds.to.quantify.txt
+
+# generated files
+PRIDE-URLs-*.csv
+Quantification-status.csv
+mono_crash.*
+__pycache__/
+*.pyc
