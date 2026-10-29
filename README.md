@@ -80,7 +80,7 @@ For every HCD file of a project:
 1. Reads the MGF file and writes a FlashLFQ input file with one entry per spectrum. The precursor mass is computed as `(m/z - 1.007276) * charge`. The spectrum title is stored in the `Protein Accession` column.
 2. Runs FlashLFQ on the corresponding mzML file (`--chg --int --ppm=20`).
 
-The results of all files are combined into `<PXD>/QuantifiedPeaks_v2.tsv`. The `Protein Group` column of this file contains the spectrum titles. Projects that already have `QuantifiedPeaks_v2.tsv` or `ErrorReport_v2.txt` are skipped.
+The results of all files are combined into `<PXD>/QuantifiedPeaks.tsv`. The `Protein Group` column of this file contains the spectrum titles. Projects that already have `QuantifiedPeaks.tsv` or `ErrorReport.txt` are skipped.
 
 ## Output
 
@@ -90,14 +90,14 @@ PXD000001/
 ├── metadata/                 JSON metadata, HCD_files.txt, CID_files.txt
 ├── MGF/                      MGF files (.mgf.gz)
 ├── mzml/                     mzML files (.mzML.gz)
-├── QuantifiedPeaks_v2.tsv    FlashLFQ peaks of all HCD files
+├── QuantifiedPeaks.tsv       FlashLFQ peaks of all HCD files
 └── quant.log                 log of quant-from-mgfs.sh
 ```
 
 Other files that can appear in a project folder:
 
 - `no-hcd-files`: the project has no RAW files, or none of them is HCD.
-- `ErrorReport_v2.txt`: FlashLFQ produced no results for the project.
+- `ErrorReport.txt`: FlashLFQ produced no results for the project.
 
 ## Utility scripts
 
@@ -107,6 +107,7 @@ Other files that can appear in a project folder:
 | `Download-from-PRIDE.sh` | Downloads the `.raw` files of one PRIDE project: `bash Download-from-PRIDE.sh <project FTP URL> <target folder>`. |
 | `decompress-raw.sh` | Decompresses the HCD RAW files of one project: `bash decompress-raw.sh <PXD>`. |
 | `double-check-metadata.sh` | Extracts the metadata of the files listed in `metadata/CID_files.txt` again, to check files that were not classified as HCD. |
+| `ionbot.quant/ionbot2FlashLFQ-project.py` | Quantifies the ionbot identifications of a project the same way as `mgf2FlashLFQ.py`, for comparison: `python ionbot.quant/ionbot2FlashLFQ-project.py [-x] [-i IONBOT_DIR] PXD [PXD ...]`. Reads `<PXD>/IONBOT_v*/<file>.mgf.gzip/ionbot.first.csv` (highest version, or the folder given with `-i`) and the mzML files from `mzml/`, and writes `<PXD>/QuantifiedPeaks.ionbot.tsv` (or `ErrorReport.ionbot.txt`). |
 | `get-quant-status.py` | Writes `Quantification-status.csv` with the number of RAW, metadata and HCD files and the quantification status of each project in `pxds.to.quantify.txt`. |
 | `ionbot.quant/combine-quant-results.py` | Concatenates the TSV files listed in a text file into one CSV: `python ionbot.quant/combine-quant-results.py paths.txt -o combined.csv`. |
 

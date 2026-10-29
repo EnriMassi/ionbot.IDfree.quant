@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-import sys, os, re, shutil, subprocess
+import sys, os, re, shutil, subprocess, hashlib
 import pandas as pd
 import numpy as np
 from pyteomics import mgf
@@ -32,24 +32,14 @@ def compress(path):
         do_command(f'gzip -f {path}')
 
 def digit_to_aminoacid(x):
-    aa_symbols = 'ACDEFGHILMNP'
+    aa_symbols = 'ACDEFGHILM'
     x = str(x)
     aa = [aa_symbols[int(_)] for _ in x]
     return ''.join(aa)
 
-my_cols = [
-    "Scan Retention Time",
-    "Precursor Charge",
-    "Peptide Monoisotopic Mass",
-    "Protein Accession",
-    "File Name",
-    'Shared_pep'
-]
-
-
 for PXD in sys.argv[1:]:
     # skip if we already have quant
-    if os.path.exists(os.path.join(PXD,'QuantifiedPeaks_v2.tsv')) or os.path.exists(os.path.join(PXD,'ErrorReport_v2.txt')):
+    if os.path.exists(os.path.join(PXD,'QuantifiedPeaks_v4.tsv')) or os.path.exists(os.path.join(PXD,'ErrorReport_v4.txt')):
         continue
 
     # unzip stuff
@@ -105,16 +95,27 @@ for PXD in sys.argv[1:]:
                     charge = _['params']['charge'][0]
                     mz     = _['params']['pepmass'][0]
                     title  = _['params']['title']
-                    tmp.append([rt, charge, 
-                                (mz-PROTON_MASS)*charge, 
-                                title, fname, False])
+
+                    scan = int(re.search(r'scan=(\d+)', title).group(1))
+
+                    # tmp.append([rt, charge, 
+                    #             (mz-PROTON_MASS)*charge, 
+                    #             title, fname, False, scan_n])
+                    tmp.append(
+                        {
+                            'Scan Retention Time': rt,
+                            'Precursor Charge': charge,
+                            'Peptide Monoisotopic Mass': (mz-PROTON_MASS)*charge,
+                            'Protein Accession': title,
+                            'File Name': fname,
+                            'Shared_pep': False,
+                            'Base Sequence': digit_to_aminoacid(scan),
+                            'Full Sequence': hashlib.sha1(fname.encode("utf-8")).hexdigest()[:12] + "_SCAN" + str(scan)
+                        }
+                    )
                 except:
                     continue
-            tmp = pd.DataFrame(tmp, columns=my_cols)
-            tmp.index.name = 'Base Sequence'
-            tmp.reset_index(inplace=True)
-            tmp['Full Sequence'] = tmp['Base Sequence'].apply(digit_to_aminoacid)
-            tmp['Base Sequence'] = tmp['Full Sequence']
+            tmp = pd.DataFrame(tmp)
             tmp.to_csv(flashlfqpath, sep="\t", index=False)
 
             try:
@@ -134,8 +135,8 @@ for PXD in sys.argv[1:]:
             pass
     print(f'Combining {len(combo_quant_peaks)} output files...')
     try:
-        pd.concat(combo_quant_peaks, ignore_index=True).to_csv(os.path.join(PXD,'QuantifiedPeaks_v2.tsv'), sep='\t', index=False)
+        pd.concat(combo_quant_peaks, ignore_index=True).to_csv(os.path.join(PXD,'QuantifiedPeaks_v4.tsv'), sep='\t', index=False)
     except:
-        do_command(f"touch {os.path.join(PXD,'ErrorReport_v2.txt')}")
+        do_command(f"touch {os.path.join(PXD,'ErrorReport_v4.txt')}")
     shutil.rmtree(os.path.join(PXD,'FlashLFQ'))
     print("------------")

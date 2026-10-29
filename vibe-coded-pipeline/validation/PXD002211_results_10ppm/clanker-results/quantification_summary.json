@@ -1,0 +1,971 @@
+{
+  "pipeline": {
+    "name": "quantify_precursors.py",
+    "version": "1.0.0"
+  },
+  "started_utc": "2026-10-29T12:51:29Z",
+  "host": {
+    "python": "3.11.5",
+    "platform": "Linux-6.12.85+deb13-amd64-x86_64-with-glibc2.41"
+  },
+  "project_dir": "/public/conode56/PRIDE_DATA/PXD002211",
+  "input_dir": "/public/conode56/PRIDE_DATA/PXD002211/MZML",
+  "reference_mgf_dir": "/public/conode56/PRIDE_DATA/PXD002211/MGF",
+  "output_dir": "/public/conode56/PRIDE_DATA/PXD002211/results",
+  "parameters": {
+    "ppm": 10.0,
+    "isotope_ppm": 5.0,
+    "num_isotopes_required": 2,
+    "id_specific_charge_state": true,
+    "integrate": true,
+    "normalize": false,
+    "match_between_runs": "neutralised (--pipfdr 0, one FlashLFQ run per file)",
+    "threads": 4,
+    "image": "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+    "title_template": "{run_id}: {native_id}",
+    "proton_mass": 1.007276466879
+  },
+  "files": [
+    {
+      "source_file": "HUVEC_IL1b1a_sn.mzML.gz",
+      "run_id": "HUVEC_IL1b1a_sn",
+      "record_id_prefix": "c1670bae1b7d_",
+      "flashlfq_file_name": "HUVEC_IL1b1a_sn.mzML",
+      "size_bytes": 139174390,
+      "spectrum_counts": {
+        "spectra_total": 32372,
+        "ms_level_1": 5305,
+        "ms_level_2": 27067,
+        "hcd_ms2": 27067
+      },
+      "title_sources": {
+        "reconstructed": 27067
+      },
+      "precursor_status_counts": {
+        "ok": 27067
+      }
+    },
+    {
+      "source_file": "HUVEC_IL1b1b_sn.mzML.gz",
+      "run_id": "HUVEC_IL1b1b_sn",
+      "record_id_prefix": "112a8b442278_",
+      "flashlfq_file_name": "HUVEC_IL1b1b_sn.mzML",
+      "size_bytes": 145891781,
+      "spectrum_counts": {
+        "spectra_total": 32443,
+        "ms_level_1": 5519,
+        "ms_level_2": 26924,
+        "hcd_ms2": 26924
+      },
+      "title_sources": {
+        "reconstructed": 26924
+      },
+      "precursor_status_counts": {
+        "ok": 26924
+      }
+    },
+    {
+      "source_file": "HUVEC_IL1b2a_sn.mzML.gz",
+      "run_id": "HUVEC_IL1b2a_sn",
+      "record_id_prefix": "0d63820f8d56_",
+      "flashlfq_file_name": "HUVEC_IL1b2a_sn.mzML",
+      "size_bytes": 132651065,
+      "spectrum_counts": {
+        "spectra_total": 27799,
+        "ms_level_1": 5072,
+        "ms_level_2": 22727,
+        "hcd_ms2": 22727
+      },
+      "title_sources": {
+        "reconstructed": 22727
+      },
+      "precursor_status_counts": {
+        "ok": 22727
+      }
+    },
+    {
+      "source_file": "HUVEC_IL1b2b_sn.mzML.gz",
+      "run_id": "HUVEC_IL1b2b_sn",
+      "record_id_prefix": "94a8233b0bba_",
+      "flashlfq_file_name": "HUVEC_IL1b2b_sn.mzML",
+      "size_bytes": 158955356,
+      "spectrum_counts": {
+        "spectra_total": 32827,
+        "ms_level_1": 6180,
+        "ms_level_2": 26647,
+        "hcd_ms2": 26647
+      },
+      "title_sources": {
+        "reconstructed": 26647
+      },
+      "precursor_status_counts": {
+        "ok": 26647
+      }
+    },
+    {
+      "source_file": "HUVEC_IL1b3a_sn.mzML.gz",
+      "run_id": "HUVEC_IL1b3a_sn",
+      "record_id_prefix": "c52df3bd3b76_",
+      "flashlfq_file_name": "HUVEC_IL1b3a_sn.mzML",
+      "size_bytes": 145443638,
+      "spectrum_counts": {
+        "spectra_total": 37422,
+        "ms_level_1": 9828,
+        "ms_level_2": 27594,
+        "hcd_ms2": 27594
+      },
+      "title_sources": {
+        "reconstructed": 27594
+      },
+      "precursor_status_counts": {
+        "ok": 27594
+      }
+    },
+    {
+      "source_file": "HUVEC_IL1b3b_sn.mzML.gz",
+      "run_id": "HUVEC_IL1b3b_sn",
+      "record_id_prefix": "1d4452c58370_",
+      "flashlfq_file_name": "HUVEC_IL1b3b_sn.mzML",
+      "size_bytes": 157184120,
+      "spectrum_counts": {
+        "spectra_total": 45669,
+        "ms_level_1": 12839,
+        "ms_level_2": 32830,
+        "hcd_ms2": 32830
+      },
+      "title_sources": {
+        "reconstructed": 32830
+      },
+      "precursor_status_counts": {
+        "ok": 32830
+      }
+    }
+  ],
+  "flashlfq_runs": {
+    "HUVEC_IL1b1a_sn.mzML.gz": {
+      "runner": "docker",
+      "records_sent": 27067,
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--security-opt",
+        "no-new-privileges",
+        "-e",
+        "HOME=/tmp",
+        "-e",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "-e",
+        "DOTNET_NOLOGO=1",
+        "--name",
+        "ms1quant-3272287-001",
+        "--user",
+        "1011:1000",
+        "--cpus",
+        "4",
+        "--mount",
+        "type=bind,source=/tmp/ms1quant_staging_0uekp50h/run001,target=/data/mzml",
+        "--mount",
+        "type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b1a_sn,target=/data/out",
+        "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+        "--idt",
+        "/data/out/flashlfq_input_run.tsv",
+        "--rep",
+        "/data/mzml",
+        "--out",
+        "/data/out/output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "4",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 21.0,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 27067,
+        "records_reported_accepted": 27067,
+        "records_sent": 27067,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "/data/out/flashlfq_input_run.tsv",
+        "SpectraFileRepository": "/data/mzml",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "/data/out/output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 4,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": 500109873,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "HUVEC_IL1b1b_sn.mzML.gz": {
+      "runner": "docker",
+      "records_sent": 26924,
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--security-opt",
+        "no-new-privileges",
+        "-e",
+        "HOME=/tmp",
+        "-e",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "-e",
+        "DOTNET_NOLOGO=1",
+        "--name",
+        "ms1quant-3272287-002",
+        "--user",
+        "1011:1000",
+        "--cpus",
+        "4",
+        "--mount",
+        "type=bind,source=/tmp/ms1quant_staging_0uekp50h/run002,target=/data/mzml",
+        "--mount",
+        "type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b1b_sn,target=/data/out",
+        "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+        "--idt",
+        "/data/out/flashlfq_input_run.tsv",
+        "--rep",
+        "/data/mzml",
+        "--out",
+        "/data/out/output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "4",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 26.2,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 26924,
+        "records_reported_accepted": 26924,
+        "records_sent": 26924,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "/data/out/flashlfq_input_run.tsv",
+        "SpectraFileRepository": "/data/mzml",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "/data/out/output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 4,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": 662553943,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "HUVEC_IL1b2a_sn.mzML.gz": {
+      "runner": "docker",
+      "records_sent": 22727,
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--security-opt",
+        "no-new-privileges",
+        "-e",
+        "HOME=/tmp",
+        "-e",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "-e",
+        "DOTNET_NOLOGO=1",
+        "--name",
+        "ms1quant-3272287-003",
+        "--user",
+        "1011:1000",
+        "--cpus",
+        "4",
+        "--mount",
+        "type=bind,source=/tmp/ms1quant_staging_0uekp50h/run003,target=/data/mzml",
+        "--mount",
+        "type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b2a_sn,target=/data/out",
+        "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+        "--idt",
+        "/data/out/flashlfq_input_run.tsv",
+        "--rep",
+        "/data/mzml",
+        "--out",
+        "/data/out/output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "4",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 19.1,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 22727,
+        "records_reported_accepted": 22727,
+        "records_sent": 22727,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "/data/out/flashlfq_input_run.tsv",
+        "SpectraFileRepository": "/data/mzml",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "/data/out/output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 4,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": 121374782,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "HUVEC_IL1b2b_sn.mzML.gz": {
+      "runner": "docker",
+      "records_sent": 26647,
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--security-opt",
+        "no-new-privileges",
+        "-e",
+        "HOME=/tmp",
+        "-e",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "-e",
+        "DOTNET_NOLOGO=1",
+        "--name",
+        "ms1quant-3272287-004",
+        "--user",
+        "1011:1000",
+        "--cpus",
+        "4",
+        "--mount",
+        "type=bind,source=/tmp/ms1quant_staging_0uekp50h/run004,target=/data/mzml",
+        "--mount",
+        "type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b2b_sn,target=/data/out",
+        "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+        "--idt",
+        "/data/out/flashlfq_input_run.tsv",
+        "--rep",
+        "/data/mzml",
+        "--out",
+        "/data/out/output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "4",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 18.5,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 26647,
+        "records_reported_accepted": 26647,
+        "records_sent": 26647,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "/data/out/flashlfq_input_run.tsv",
+        "SpectraFileRepository": "/data/mzml",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "/data/out/output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 4,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": -701304615,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "HUVEC_IL1b3a_sn.mzML.gz": {
+      "runner": "docker",
+      "records_sent": 27594,
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--security-opt",
+        "no-new-privileges",
+        "-e",
+        "HOME=/tmp",
+        "-e",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "-e",
+        "DOTNET_NOLOGO=1",
+        "--name",
+        "ms1quant-3272287-005",
+        "--user",
+        "1011:1000",
+        "--cpus",
+        "4",
+        "--mount",
+        "type=bind,source=/tmp/ms1quant_staging_0uekp50h/run005,target=/data/mzml",
+        "--mount",
+        "type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b3a_sn,target=/data/out",
+        "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+        "--idt",
+        "/data/out/flashlfq_input_run.tsv",
+        "--rep",
+        "/data/mzml",
+        "--out",
+        "/data/out/output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "4",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 21.3,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 27594,
+        "records_reported_accepted": 27594,
+        "records_sent": 27594,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "/data/out/flashlfq_input_run.tsv",
+        "SpectraFileRepository": "/data/mzml",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "/data/out/output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 4,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": 1239997286,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "HUVEC_IL1b3b_sn.mzML.gz": {
+      "runner": "docker",
+      "records_sent": 32830,
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--security-opt",
+        "no-new-privileges",
+        "-e",
+        "HOME=/tmp",
+        "-e",
+        "DOTNET_CLI_TELEMETRY_OPTOUT=1",
+        "-e",
+        "DOTNET_NOLOGO=1",
+        "--name",
+        "ms1quant-3272287-006",
+        "--user",
+        "1011:1000",
+        "--cpus",
+        "4",
+        "--mount",
+        "type=bind,source=/tmp/ms1quant_staging_0uekp50h/run006,target=/data/mzml",
+        "--mount",
+        "type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b3b_sn,target=/data/out",
+        "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+        "--idt",
+        "/data/out/flashlfq_input_run.tsv",
+        "--rep",
+        "/data/mzml",
+        "--out",
+        "/data/out/output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "4",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 35.6,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 32830,
+        "records_reported_accepted": 32830,
+        "records_sent": 32830,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "/data/out/flashlfq_input_run.tsv",
+        "SpectraFileRepository": "/data/mzml",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "/data/out/output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 4,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": -1462486500,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    }
+  },
+  "counts": {
+    "hcd_ms2_spectra": 163789,
+    "quantifiable_precursors": 163789,
+    "records_sent_to_flashlfq": 163789,
+    "flashlfq_failed_files": [],
+    "flashlfq_peak_rows": 125316,
+    "features_with_apex": 104419,
+    "features_shared_by_multiple_spectra": 18802,
+    "spectra_in_shared_features": 57275,
+    "max_spectra_per_feature": 101,
+    "feature_size_distribution": {
+      "1": 85617,
+      "2": 12547,
+      "3": 3000,
+      "4": 1214,
+      "5": 617,
+      "6": 389,
+      "7": 223,
+      "8": 158,
+      "9": 129,
+      "10": 83,
+      "11": 69,
+      "12": 65,
+      "13": 46,
+      "14": 24,
+      "15": 24,
+      "16": 24,
+      "17": 24,
+      "18": 18,
+      "19": 15,
+      "20": 19,
+      "21": 11,
+      "22": 19,
+      "23": 10,
+      "24": 8,
+      "25": 6,
+      "26": 7,
+      "27": 4,
+      "28": 5,
+      "29": 5,
+      "30": 5,
+      "31": 4,
+      "32": 2,
+      "33": 3,
+      "34": 3,
+      "35": 2,
+      "36": 2,
+      "37": 1,
+      "40": 2,
+      "41": 1,
+      "44": 1,
+      "48": 2,
+      "49": 1,
+      "51": 1,
+      "52": 1,
+      "55": 1,
+      "58": 3,
+      "59": 1,
+      "77": 1,
+      "83": 1,
+      "101": 1
+    },
+    "quantification_status": {
+      "quantified": 142892,
+      "no_ms1_feature_found": 20897
+    },
+    "quantification_status_per_file": {
+      "HUVEC_IL1b1a_sn.mzML.gz": {
+        "quantified": 24425,
+        "no_ms1_feature_found": 2642
+      },
+      "HUVEC_IL1b1b_sn.mzML.gz": {
+        "quantified": 24342,
+        "no_ms1_feature_found": 2582
+      },
+      "HUVEC_IL1b2a_sn.mzML.gz": {
+        "quantified": 20163,
+        "no_ms1_feature_found": 2564
+      },
+      "HUVEC_IL1b2b_sn.mzML.gz": {
+        "no_ms1_feature_found": 3095,
+        "quantified": 23552
+      },
+      "HUVEC_IL1b3a_sn.mzML.gz": {
+        "quantified": 23207,
+        "no_ms1_feature_found": 4387
+      },
+      "HUVEC_IL1b3b_sn.mzML.gz": {
+        "quantified": 27203,
+        "no_ms1_feature_found": 5627
+      }
+    },
+    "feature_charge_matches_precursor_charge": {
+      "true": 142857,
+      "false": 35
+    },
+    "ms2_rt_within_feature_bounds": {
+      "true": 117665,
+      "false": 25227
+    },
+    "abs_ms2_rt_minus_feature_apex_min": {
+      "n": 142892,
+      "min": 0.0011969999999905667,
+      "q25": 0.04587399999999775,
+      "median": 0.12369399999999864,
+      "q75": 0.33989700000000056,
+      "max": 39.81658399999999
+    },
+    "ms1_intensity": {
+      "n": 142892,
+      "min": 547.0529903163736,
+      "q25": 1741919.247428086,
+      "median": 11079903.724432588,
+      "q75": 74204231.5301602,
+      "max": 314018948251.6002
+    }
+  },
+  "checks": {
+    "hcd_spectra_found": {
+      "passed": true,
+      "detail": {
+        "HUVEC_IL1b1a_sn.mzML.gz": 27067,
+        "HUVEC_IL1b1b_sn.mzML.gz": 26924,
+        "HUVEC_IL1b2a_sn.mzML.gz": 22727,
+        "HUVEC_IL1b2b_sn.mzML.gz": 26647,
+        "HUVEC_IL1b3a_sn.mzML.gz": 27594,
+        "HUVEC_IL1b3b_sn.mzML.gz": 32830
+      }
+    },
+    "internal_ids_unique": {
+      "passed": true,
+      "detail": null
+    },
+    "spectrum_titles_unique": {
+      "passed": true,
+      "detail": []
+    },
+    "inventory_matches_spectrum_counts": {
+      "passed": true,
+      "detail": null
+    },
+    "synthetic_ids_unique": {
+      "passed": true,
+      "detail": null
+    },
+    "titles_match_reference_mgf": {
+      "passed": true,
+      "detail": {
+        "mgf_dir": "/public/conode56/PRIDE_DATA/PXD002211/MGF",
+        "mgf_spectra": 163789,
+        "inventory_spectra": 163789,
+        "titles_matched": 163789,
+        "titles_unmatched": 0,
+        "mgf_titles_not_in_inventory": 0,
+        "precursor_mz_mismatches": 0,
+        "charge_mismatches": 0,
+        "retention_time_mismatches": 0,
+        "unmatched_examples": []
+      }
+    },
+    "flashlfq_input_valid_for_generic_reader": {
+      "passed": true,
+      "detail": {
+        "HUVEC_IL1b1a_sn.mzML": 27067,
+        "HUVEC_IL1b1b_sn.mzML": 26924,
+        "HUVEC_IL1b2a_sn.mzML": 22727,
+        "HUVEC_IL1b2b_sn.mzML": 26647,
+        "HUVEC_IL1b3a_sn.mzML": 27594,
+        "HUVEC_IL1b3b_sn.mzML": 32830
+      }
+    },
+    "flashlfq_input_rows_match_quantifiable": {
+      "passed": true,
+      "detail": {
+        "sent": 163789,
+        "quantifiable": 163789
+      }
+    },
+    "flashlfq_runs_succeeded": {
+      "passed": true,
+      "detail": {}
+    },
+    "flashlfq_read_all_records": {
+      "passed": true,
+      "detail": {
+        "HUVEC_IL1b1a_sn.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 27067,
+          "records_reported_accepted": 27067,
+          "records_sent": 27067,
+          "version_line": null
+        },
+        "HUVEC_IL1b1b_sn.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 26924,
+          "records_reported_accepted": 26924,
+          "records_sent": 26924,
+          "version_line": null
+        },
+        "HUVEC_IL1b2a_sn.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 22727,
+          "records_reported_accepted": 22727,
+          "records_sent": 22727,
+          "version_line": null
+        },
+        "HUVEC_IL1b2b_sn.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 26647,
+          "records_reported_accepted": 26647,
+          "records_sent": 26647,
+          "version_line": null
+        },
+        "HUVEC_IL1b3a_sn.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 27594,
+          "records_reported_accepted": 27594,
+          "records_sent": 27594,
+          "version_line": null
+        },
+        "HUVEC_IL1b3b_sn.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 32830,
+          "records_reported_accepted": 32830,
+          "records_sent": 32830,
+          "version_line": null
+        }
+      }
+    },
+    "flashlfq_effective_settings_as_requested": {
+      "passed": true,
+      "detail": {
+        "HUVEC_IL1b1a_sn.mzML.gz": {},
+        "HUVEC_IL1b1b_sn.mzML.gz": {},
+        "HUVEC_IL1b2a_sn.mzML.gz": {},
+        "HUVEC_IL1b2b_sn.mzML.gz": {},
+        "HUVEC_IL1b3a_sn.mzML.gz": {},
+        "HUVEC_IL1b3b_sn.mzML.gz": {}
+      }
+    },
+    "no_match_between_runs_peaks": {
+      "passed": true,
+      "detail": {
+        "mbr_rows": 0,
+        "detection_types": {
+          "MSMS": 125316
+        }
+      }
+    },
+    "feature_mapping_integrity": {
+      "passed": true,
+      "detail": []
+    },
+    "no_cross_file_assignments": {
+      "passed": true,
+      "detail": null
+    },
+    "every_record_in_flashlfq_output": {
+      "passed": true,
+      "detail": {
+        "missing": 0,
+        "examples": []
+      }
+    },
+    "flashlfq_echoes_input_values": {
+      "passed": true,
+      "detail": {
+        "mismatching_single_record_peaks": 0
+      }
+    },
+    "one_output_row_per_hcd_spectrum": {
+      "passed": true,
+      "detail": {
+        "rows": 163789,
+        "hcd_spectra": 163789
+      }
+    },
+    "per_file_output_counts_match_inventory": {
+      "passed": true,
+      "detail": {
+        "HUVEC_IL1b1a_sn.mzML.gz": 27067,
+        "HUVEC_IL1b1b_sn.mzML.gz": 26924,
+        "HUVEC_IL1b2a_sn.mzML.gz": 22727,
+        "HUVEC_IL1b2b_sn.mzML.gz": 26647,
+        "HUVEC_IL1b3a_sn.mzML.gz": 27594,
+        "HUVEC_IL1b3b_sn.mzML.gz": 32830
+      }
+    }
+  },
+  "all_checks_passed": true,
+  "elapsed_seconds": 190.3
+}

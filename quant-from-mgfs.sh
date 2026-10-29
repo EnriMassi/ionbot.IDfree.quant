@@ -13,7 +13,7 @@ quantify() {
 	python -u ionbot.quant/mgf2FlashLFQ.py $1
 	gzip -f $1/MGF/*.mgf
 	gzip -f $1/mzml/*.mzML
-	rm $1/FlashLfqSettings.toml $1/flashlfq.tsv  $1/QuantifiedPeaks.tsv
+	rm $1/FlashLfqSettings.toml $1/flashlfq.tsv
 	echo "_______"
 }
 export -f quantify

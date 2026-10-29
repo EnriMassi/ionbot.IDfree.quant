@@ -2,6 +2,7 @@
 check-if-pxd.sh
 clear-empty-folders.py
 compare-folders.py
+*.ipynb
 
 # draft Python port of quant-from-mgfs.sh, not tested yet
 quant-from-mgfs.py
@@ -18,3 +19,6 @@ Quantification-status.csv
 mono_crash.*
 __pycache__/
 *.pyc
+
+# result files
+_quant_results

@@ -1,0 +1,5 @@
+# Runtime: no third-party packages (Python >= 3.11 standard library only).
+# FlashLFQ itself runs in Docker: smithchemwisc/flashlfq:2.1.5 (pinned by digest in quantify_precursors.py).
+
+# Tests only:
+pytest>=7

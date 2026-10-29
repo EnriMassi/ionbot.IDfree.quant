@@ -1,0 +1,499 @@
+{
+  "pipeline": {
+    "name": "quantify_precursors.py",
+    "version": "1.0.0"
+  },
+  "started_utc": "2026-10-29T09:38:27Z",
+  "host": {
+    "python": "3.11.4",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "project_dir": "C:\\Users\\Enrico\\Desktop\\let-claude-cook\\PXD009327",
+  "input_dir": "C:\\Users\\Enrico\\Desktop\\let-claude-cook\\PXD009327\\MZML",
+  "reference_mgf_dir": "C:\\Users\\Enrico\\Desktop\\let-claude-cook\\PXD009327\\MGF",
+  "output_dir": "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16",
+  "parameters": {
+    "ppm": 10.0,
+    "isotope_ppm": 5.0,
+    "num_isotopes_required": 2,
+    "id_specific_charge_state": true,
+    "integrate": true,
+    "normalize": false,
+    "match_between_runs": "neutralised (--pipfdr 0, one FlashLFQ run per file)",
+    "threads": 16,
+    "image": "smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a",
+    "title_template": "{run_id}: {native_id}",
+    "proton_mass": 1.007276466879
+  },
+  "files": [
+    {
+      "source_file": "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz",
+      "run_id": "VEL180306-01_FWeiland180306H01_FW_180307072156",
+      "record_id_prefix": "7a46706c58fa_",
+      "flashlfq_file_name": "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML",
+      "size_bytes": 38285482,
+      "spectrum_counts": {
+        "spectra_total": 12311,
+        "ms_level_1": 2073,
+        "ms_level_2": 10238,
+        "hcd_ms2": 10238
+      },
+      "title_sources": {
+        "reconstructed": 10238
+      },
+      "precursor_status_counts": {
+        "ok": 10238
+      }
+    },
+    {
+      "source_file": "VEL180306-03_Fweiland180306H02_FW.mzML.gz",
+      "run_id": "VEL180306-03_Fweiland180306H02_FW",
+      "record_id_prefix": "458053a626eb_",
+      "flashlfq_file_name": "VEL180306-03_Fweiland180306H02_FW.mzML",
+      "size_bytes": 37842751,
+      "spectrum_counts": {
+        "spectra_total": 11905,
+        "ms_level_1": 2351,
+        "ms_level_2": 9554,
+        "hcd_ms2": 9554
+      },
+      "title_sources": {
+        "reconstructed": 9554
+      },
+      "precursor_status_counts": {
+        "ok": 9554
+      }
+    },
+    {
+      "source_file": "VEL180306-05_Fweiland180306H03_FW.mzML.gz",
+      "run_id": "VEL180306-05_Fweiland180306H03_FW",
+      "record_id_prefix": "d7190da27fc1_",
+      "flashlfq_file_name": "VEL180306-05_Fweiland180306H03_FW.mzML",
+      "size_bytes": 38350324,
+      "spectrum_counts": {
+        "spectra_total": 11946,
+        "ms_level_1": 2330,
+        "ms_level_2": 9616,
+        "hcd_ms2": 9616
+      },
+      "title_sources": {
+        "reconstructed": 9616
+      },
+      "precursor_status_counts": {
+        "ok": 9616
+      }
+    }
+  ],
+  "flashlfq_runs": {
+    "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": {
+      "runner": "local",
+      "records_sent": 10238,
+      "command": [
+        "C:/Users/Enrico/AppData/Local/Temp/claude/C--Users-Enrico-Desktop-let-claude-cook/4f24c6dc-1b10-45e1-8ae9-dfbca508998a/scratchpad/dotnet10/dotnet.exe",
+        "C:/Users/Enrico/AppData/Local/Temp/claude/C--Users-Enrico-Desktop-let-claude-cook/4f24c6dc-1b10-45e1-8ae9-dfbca508998a/scratchpad/flashlfq_release/CMD.dll",
+        "--idt",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16\\flashlfq\\VEL180306-01_FWeiland180306H01_FW_180307072156\\flashlfq_input_run.tsv",
+        "--rep",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\s3\\ms1quant_staging_bwk_bdw4\\run001",
+        "--out",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16\\flashlfq\\VEL180306-01_FWeiland180306H01_FW_180307072156\\output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "16",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 11.2,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 10238,
+        "records_reported_accepted": 10238,
+        "records_sent": 10238,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\v16\\\\flashlfq\\\\VEL180306-01_FWeiland180306H01_FW_180307072156\\\\flashlfq_input_run.tsv",
+        "SpectraFileRepository": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\s3\\\\ms1quant_staging_bwk_bdw4\\\\run001",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\v16\\\\flashlfq\\\\VEL180306-01_FWeiland180306H01_FW_180307072156\\\\output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 16,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": 1550121072,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "VEL180306-03_Fweiland180306H02_FW.mzML.gz": {
+      "runner": "local",
+      "records_sent": 9554,
+      "command": [
+        "C:/Users/Enrico/AppData/Local/Temp/claude/C--Users-Enrico-Desktop-let-claude-cook/4f24c6dc-1b10-45e1-8ae9-dfbca508998a/scratchpad/dotnet10/dotnet.exe",
+        "C:/Users/Enrico/AppData/Local/Temp/claude/C--Users-Enrico-Desktop-let-claude-cook/4f24c6dc-1b10-45e1-8ae9-dfbca508998a/scratchpad/flashlfq_release/CMD.dll",
+        "--idt",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16\\flashlfq\\VEL180306-03_Fweiland180306H02_FW\\flashlfq_input_run.tsv",
+        "--rep",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\s3\\ms1quant_staging_bwk_bdw4\\run002",
+        "--out",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16\\flashlfq\\VEL180306-03_Fweiland180306H02_FW\\output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "16",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 11.0,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 9554,
+        "records_reported_accepted": 9554,
+        "records_sent": 9554,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\v16\\\\flashlfq\\\\VEL180306-03_Fweiland180306H02_FW\\\\flashlfq_input_run.tsv",
+        "SpectraFileRepository": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\s3\\\\ms1quant_staging_bwk_bdw4\\\\run002",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\v16\\\\flashlfq\\\\VEL180306-03_Fweiland180306H02_FW\\\\output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 16,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": -165292993,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    },
+    "VEL180306-05_Fweiland180306H03_FW.mzML.gz": {
+      "runner": "local",
+      "records_sent": 9616,
+      "command": [
+        "C:/Users/Enrico/AppData/Local/Temp/claude/C--Users-Enrico-Desktop-let-claude-cook/4f24c6dc-1b10-45e1-8ae9-dfbca508998a/scratchpad/dotnet10/dotnet.exe",
+        "C:/Users/Enrico/AppData/Local/Temp/claude/C--Users-Enrico-Desktop-let-claude-cook/4f24c6dc-1b10-45e1-8ae9-dfbca508998a/scratchpad/flashlfq_release/CMD.dll",
+        "--idt",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16\\flashlfq\\VEL180306-05_Fweiland180306H03_FW\\flashlfq_input_run.tsv",
+        "--rep",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\s3\\ms1quant_staging_bwk_bdw4\\run003",
+        "--out",
+        "C:\\Users\\Enrico\\AppData\\Local\\Temp\\claude\\C--Users-Enrico-Desktop-let-claude-cook\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\scratchpad\\v16\\flashlfq\\VEL180306-05_Fweiland180306H03_FW\\output",
+        "--ppm",
+        "10.0",
+        "--iso",
+        "5.0",
+        "--nis",
+        "2",
+        "--thr",
+        "16",
+        "--pipfdr",
+        "0",
+        "--rea",
+        "--chg",
+        "--int"
+      ],
+      "exit_code": 0,
+      "seconds": 11.1,
+      "console_checks": {
+        "failure_markers": [],
+        "reader_rejection_messages": 0,
+        "records_reported_read": 9616,
+        "records_reported_accepted": 9616,
+        "records_sent": 9616,
+        "version_line": null
+      },
+      "effective_settings": {
+        "PsmIdentificationPath": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\v16\\\\flashlfq\\\\VEL180306-05_Fweiland180306H03_FW\\\\flashlfq_input_run.tsv",
+        "SpectraFileRepository": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\s3\\\\ms1quant_staging_bwk_bdw4\\\\run003",
+        "Silent": false,
+        "ReadOnlyFileSystem": true,
+        "PrintThermoLicenceViaCommandLine": false,
+        "AcceptThermoLicenceViaCommandLine": false,
+        "OutputPath": "C:\\\\Users\\\\Enrico\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Enrico-Desktop-let-claude-cook\\\\4f24c6dc-1b10-45e1-8ae9-dfbca508998a\\\\scratchpad\\\\v16\\\\flashlfq\\\\VEL180306-05_Fweiland180306H03_FW\\\\output",
+        "Normalize": false,
+        "PpmTolerance": 10.0,
+        "IsotopePpmTolerance": 5.0,
+        "Integrate": true,
+        "NumIsotopesRequired": 2,
+        "IdSpecificChargeState": true,
+        "MaxThreads": 16,
+        "MatchBetweenRuns": true,
+        "MaxMbrRtWindow": 1.5,
+        "RequireMsmsIdInCondition": false,
+        "BayesianProteinQuant": false,
+        "ProteinQuantFoldChangeCutoff": 0.1,
+        "McmcSteps": 3000,
+        "McmcBurninSteps": 1000,
+        "UseSharedPeptidesForProteinQuant": false,
+        "RandomSeed": 948448283,
+        "MbrQValueThreshold": 0.0,
+        "UsePepQValue": false,
+        "RnaMode": false
+      },
+      "settings_mismatches": {}
+    }
+  },
+  "counts": {
+    "hcd_ms2_spectra": 29408,
+    "quantifiable_precursors": 29408,
+    "records_sent_to_flashlfq": 29408,
+    "flashlfq_failed_files": [],
+    "flashlfq_peak_rows": 25816,
+    "features_with_apex": 21457,
+    "features_shared_by_multiple_spectra": 2395,
+    "spectra_in_shared_features": 5987,
+    "max_spectra_per_feature": 15,
+    "feature_size_distribution": {
+      "1": 19062,
+      "2": 1715,
+      "3": 420,
+      "4": 148,
+      "5": 52,
+      "6": 24,
+      "7": 16,
+      "8": 7,
+      "9": 6,
+      "10": 3,
+      "11": 2,
+      "12": 1,
+      "15": 1
+    },
+    "quantification_status": {
+      "quantified": 25049,
+      "no_ms1_feature_found": 4359
+    },
+    "quantification_status_per_file": {
+      "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": {
+        "quantified": 8740,
+        "no_ms1_feature_found": 1498
+      },
+      "VEL180306-03_Fweiland180306H02_FW.mzML.gz": {
+        "no_ms1_feature_found": 1367,
+        "quantified": 8187
+      },
+      "VEL180306-05_Fweiland180306H03_FW.mzML.gz": {
+        "quantified": 8122,
+        "no_ms1_feature_found": 1494
+      }
+    },
+    "feature_charge_matches_precursor_charge": {
+      "true": 25031,
+      "false": 18
+    },
+    "ms2_rt_within_feature_bounds": {
+      "false": 6510,
+      "true": 18539
+    },
+    "abs_ms2_rt_minus_feature_apex_min": {
+      "n": 25049,
+      "min": 0.006205333333305418,
+      "q25": 0.06404833333330373,
+      "median": 0.137553333333301,
+      "q75": 0.49489833333329614,
+      "max": 63.499751666666675
+    },
+    "ms1_intensity": {
+      "n": 25049,
+      "min": 194.57324997656104,
+      "q25": 14390.02364075757,
+      "median": 45626.47052291381,
+      "q75": 190533.00966494388,
+      "max": 753234448.259903
+    }
+  },
+  "checks": {
+    "hcd_spectra_found": {
+      "passed": true,
+      "detail": {
+        "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": 10238,
+        "VEL180306-03_Fweiland180306H02_FW.mzML.gz": 9554,
+        "VEL180306-05_Fweiland180306H03_FW.mzML.gz": 9616
+      }
+    },
+    "internal_ids_unique": {
+      "passed": true,
+      "detail": null
+    },
+    "spectrum_titles_unique": {
+      "passed": true,
+      "detail": []
+    },
+    "inventory_matches_spectrum_counts": {
+      "passed": true,
+      "detail": null
+    },
+    "synthetic_ids_unique": {
+      "passed": true,
+      "detail": null
+    },
+    "titles_match_reference_mgf": {
+      "passed": true,
+      "detail": {
+        "mgf_dir": "C:\\Users\\Enrico\\Desktop\\let-claude-cook\\PXD009327\\MGF",
+        "mgf_spectra": 29408,
+        "inventory_spectra": 29408,
+        "titles_matched": 29408,
+        "titles_unmatched": 0,
+        "mgf_titles_not_in_inventory": 0,
+        "precursor_mz_mismatches": 0,
+        "charge_mismatches": 0,
+        "retention_time_mismatches": 0,
+        "unmatched_examples": []
+      }
+    },
+    "flashlfq_input_valid_for_generic_reader": {
+      "passed": true,
+      "detail": {
+        "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML": 10238,
+        "VEL180306-03_Fweiland180306H02_FW.mzML": 9554,
+        "VEL180306-05_Fweiland180306H03_FW.mzML": 9616
+      }
+    },
+    "flashlfq_input_rows_match_quantifiable": {
+      "passed": true,
+      "detail": {
+        "sent": 29408,
+        "quantifiable": 29408
+      }
+    },
+    "flashlfq_runs_succeeded": {
+      "passed": true,
+      "detail": {}
+    },
+    "flashlfq_read_all_records": {
+      "passed": true,
+      "detail": {
+        "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 10238,
+          "records_reported_accepted": 10238,
+          "records_sent": 10238,
+          "version_line": null
+        },
+        "VEL180306-03_Fweiland180306H02_FW.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 9554,
+          "records_reported_accepted": 9554,
+          "records_sent": 9554,
+          "version_line": null
+        },
+        "VEL180306-05_Fweiland180306H03_FW.mzML.gz": {
+          "failure_markers": [],
+          "reader_rejection_messages": 0,
+          "records_reported_read": 9616,
+          "records_reported_accepted": 9616,
+          "records_sent": 9616,
+          "version_line": null
+        }
+      }
+    },
+    "flashlfq_effective_settings_as_requested": {
+      "passed": true,
+      "detail": {
+        "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": {},
+        "VEL180306-03_Fweiland180306H02_FW.mzML.gz": {},
+        "VEL180306-05_Fweiland180306H03_FW.mzML.gz": {}
+      }
+    },
+    "no_match_between_runs_peaks": {
+      "passed": true,
+      "detail": {
+        "mbr_rows": 0,
+        "detection_types": {
+          "MSMS": 25816
+        }
+      }
+    },
+    "feature_mapping_integrity": {
+      "passed": true,
+      "detail": []
+    },
+    "no_cross_file_assignments": {
+      "passed": true,
+      "detail": null
+    },
+    "every_record_in_flashlfq_output": {
+      "passed": true,
+      "detail": {
+        "missing": 0,
+        "examples": []
+      }
+    },
+    "flashlfq_echoes_input_values": {
+      "passed": true,
+      "detail": {
+        "mismatching_single_record_peaks": 0
+      }
+    },
+    "one_output_row_per_hcd_spectrum": {
+      "passed": true,
+      "detail": {
+        "rows": 29408,
+        "hcd_spectra": 29408
+      }
+    },
+    "per_file_output_counts_match_inventory": {
+      "passed": true,
+      "detail": {
+        "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": 10238,
+        "VEL180306-03_Fweiland180306H02_FW.mzML.gz": 9554,
+        "VEL180306-05_Fweiland180306H03_FW.mzML.gz": 9616
+      }
+    }
+  },
+  "all_checks_passed": true,
+  "elapsed_seconds": 47.0
+}

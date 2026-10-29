@@ -1,0 +1,18 @@
+# command: docker run --rm --network none --security-opt no-new-privileges -e HOME=/tmp -e DOTNET_CLI_TELEMETRY_OPTOUT=1 -e DOTNET_NOLOGO=1 --name ms1quant-2981171-001 --user 1011:1000 --cpus 4 --mount type=bind,source=/tmp/ms1quant_staging__367x83p/run001,target=/data/mzml --mount type=bind,source=/public/conode56/PRIDE_DATA/PXD002211/results/flashlfq/HUVEC_IL1b1a_sn,target=/data/out smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99b6498eb4de9244c213566101448adb7a --idt /data/out/flashlfq_input_run.tsv --rep /data/mzml --out /data/out/output --ppm 20.0 --iso 5.0 --nis 2 --thr 4 --pipfdr 0 --rea --chg --int
+Opening PSM file /data/out/flashlfq_input_run.tsv
+Done reading PSMs; found 27067
+Setup is OK; read in 27067 identifications; starting FlashLFQ engine
+Reading spectra file
+Quantifying peptides for HUVEC_IL1b1a_sn
+Checking errors
+Finished HUVEC_IL1b1a_sn
+Find the best donors for match-between-runs
+Doing match-between-runs for HUVEC_IL1b1a_sn
+Checking errors
+Finished MBR for HUVEC_IL1b1a_sn
+Computing PEP for MBR Transfers
+Done quantifying
+Analysis time: 0h 0m 19s
+Writing output...
+Finished writing output
+# exit code: 0; elapsed 20.8 s

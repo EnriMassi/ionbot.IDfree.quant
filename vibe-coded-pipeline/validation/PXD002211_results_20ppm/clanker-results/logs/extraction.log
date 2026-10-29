@@ -1,0 +1,18 @@
+2026-10-29 11:50:24,639 level=INFO logger=ms1quant.extraction event=extracted file=HUVEC_IL1b1a_sn.mzML.gz run_id=HUVEC_IL1b1a_sn counts={"hcd_ms2": 27067, "ms_level_1": 5305, "ms_level_2": 27067, "spectra_total": 32372} title_sources={"reconstructed": 27067}
+2026-10-29 11:50:24,643 level=INFO logger=ms1quant.extraction event=precursor_status file=HUVEC_IL1b1a_sn.mzML.gz counts={"ok": 27067}
+2026-10-29 11:50:24,649 level=INFO logger=ms1quant.extraction event=selected_vs_thermo_mono file=HUVEC_IL1b1a_sn.mzML.gz n_differ_gt_0.01=6
+2026-10-29 11:50:24,649 level=INFO logger=ms1quant.extraction event=extracted file=HUVEC_IL1b1b_sn.mzML.gz run_id=HUVEC_IL1b1b_sn counts={"hcd_ms2": 26924, "ms_level_1": 5519, "ms_level_2": 26924, "spectra_total": 32443} title_sources={"reconstructed": 26924}
+2026-10-29 11:50:24,654 level=INFO logger=ms1quant.extraction event=precursor_status file=HUVEC_IL1b1b_sn.mzML.gz counts={"ok": 26924}
+2026-10-29 11:50:24,660 level=INFO logger=ms1quant.extraction event=selected_vs_thermo_mono file=HUVEC_IL1b1b_sn.mzML.gz n_differ_gt_0.01=5
+2026-10-29 11:50:24,660 level=INFO logger=ms1quant.extraction event=extracted file=HUVEC_IL1b2a_sn.mzML.gz run_id=HUVEC_IL1b2a_sn counts={"hcd_ms2": 22727, "ms_level_1": 5072, "ms_level_2": 22727, "spectra_total": 27799} title_sources={"reconstructed": 22727}
+2026-10-29 11:50:24,665 level=INFO logger=ms1quant.extraction event=precursor_status file=HUVEC_IL1b2a_sn.mzML.gz counts={"ok": 22727}
+2026-10-29 11:50:24,675 level=INFO logger=ms1quant.extraction event=selected_vs_thermo_mono file=HUVEC_IL1b2a_sn.mzML.gz n_differ_gt_0.01=1
+2026-10-29 11:50:24,675 level=INFO logger=ms1quant.extraction event=extracted file=HUVEC_IL1b2b_sn.mzML.gz run_id=HUVEC_IL1b2b_sn counts={"hcd_ms2": 26647, "ms_level_1": 6180, "ms_level_2": 26647, "spectra_total": 32827} title_sources={"reconstructed": 26647}
+2026-10-29 11:50:24,681 level=INFO logger=ms1quant.extraction event=precursor_status file=HUVEC_IL1b2b_sn.mzML.gz counts={"ok": 26647}
+2026-10-29 11:50:24,689 level=INFO logger=ms1quant.extraction event=selected_vs_thermo_mono file=HUVEC_IL1b2b_sn.mzML.gz n_differ_gt_0.01=10
+2026-10-29 11:50:24,689 level=INFO logger=ms1quant.extraction event=extracted file=HUVEC_IL1b3a_sn.mzML.gz run_id=HUVEC_IL1b3a_sn counts={"hcd_ms2": 27594, "ms_level_1": 9828, "ms_level_2": 27594, "spectra_total": 37422} title_sources={"reconstructed": 27594}
+2026-10-29 11:50:24,693 level=INFO logger=ms1quant.extraction event=precursor_status file=HUVEC_IL1b3a_sn.mzML.gz counts={"ok": 27594}
+2026-10-29 11:50:24,698 level=INFO logger=ms1quant.extraction event=selected_vs_thermo_mono file=HUVEC_IL1b3a_sn.mzML.gz n_differ_gt_0.01=5
+2026-10-29 11:50:24,698 level=INFO logger=ms1quant.extraction event=extracted file=HUVEC_IL1b3b_sn.mzML.gz run_id=HUVEC_IL1b3b_sn counts={"hcd_ms2": 32830, "ms_level_1": 12839, "ms_level_2": 32830, "spectra_total": 45669} title_sources={"reconstructed": 32830}
+2026-10-29 11:50:24,702 level=INFO logger=ms1quant.extraction event=precursor_status file=HUVEC_IL1b3b_sn.mzML.gz counts={"ok": 32830}
+2026-10-29 11:50:24,706 level=INFO logger=ms1quant.extraction event=selected_vs_thermo_mono file=HUVEC_IL1b3b_sn.mzML.gz n_differ_gt_0.01=5
