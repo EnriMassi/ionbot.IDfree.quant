@@ -3,6 +3,7 @@ check-if-pxd.sh
 clear-empty-folders.py
 compare-folders.py
 *.ipynb
+vibe-coded-pipeline/validation/
 
 # draft Python port of quant-from-mgfs.sh, not tested yet
 quant-from-mgfs.py

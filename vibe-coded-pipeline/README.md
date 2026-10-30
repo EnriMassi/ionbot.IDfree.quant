@@ -26,11 +26,11 @@ docker pull smithchemwisc/flashlfq:2.1.5@sha256:5340791eba72ce6c2f5d82e8d6d43a99
 
 # Project folder with the standard layout: <project>/MZML, <project>/MGF
 python3 quantify_precursors.py --project /data/PXD009327 --threads 16 --ppm 10
-#   -> reads /data/PXD009327/MZML, writes /data/PXD009327/results,
+#   -> reads /data/PXD009327/MZML, writes /data/PXD009327/IDfree-quant-results,
 #      checks titles against /data/PXD009327/MGF (if it contains .mgf/.mgf.gz files)
 
 # Equivalent with explicit paths (any explicit path overrides the derived one)
-python3 quantify_precursors.py --input /data/PXD009327/MZML --output /data/PXD009327/results \
+python3 quantify_precursors.py --input /data/PXD009327/MZML --output /data/PXD009327/IDfree-quant-results \
     --reference-mgf-dir /data/PXD009327/MGF --threads 16 --ppm 10
 
 python3 quantify_precursors.py --project /data/PXD009327 --dry-run   # print the plan and docker commands
@@ -48,9 +48,9 @@ Exit codes:
 
 | Option | Default | Meaning |
 |---|---|---|
-| `--project` | none | Project folder. Derives `--input <project>/MZML`, `--output <project>/results` and `--reference-mgf-dir <project>/MGF`. The MGF check is used only when that folder holds `.mgf`/`.mgf.gz` files. Folder names are matched exactly first, then case-insensitively. |
+| `--project` | none | Project folder. Derives `--input <project>/MZML`, `--output <project>/IDfree-quant-results` and `--reference-mgf-dir <project>/MGF`. The MGF check is used only when that folder holds `.mgf`/`.mgf.gz` files. Folder names are matched exactly first, then case-insensitively. |
 | `--input` | `<project>/MZML` | Directory with `.mzML` / `.mzML.gz` files. Only read, never modified. Required without `--project`. |
-| `--output` | `<project>/results` | Results directory. Created if missing. Required without `--project`. |
+| `--output` | `<project>/IDfree-quant-results` | Results directory. Created if missing. Required without `--project`. |
 | `--threads` | 4 | FlashLFQ `--thr`, Docker `--cpus`, and the number of parallel extraction processes |
 | `--ppm` | 10 | FlashLFQ peak-finding mass tolerance (`--ppm`) |
 | `--isotope-ppm` | 5 | FlashLFQ isotope tolerance (`--iso`) |
@@ -287,7 +287,7 @@ console for error messages, checks that `QuantifiedPeaks.tsv` exists, compares t
 records read with the number sent, and checks the effective settings.
 
 The image is pinned by digest. `smithchemwisc/flashlfq:2.1.5` is built from git commit
-`754dbd98`, which is the same commit as `FlashLFQ-master.zip`. On an air-gapped server, use
+`754dbd98` (FlashLFQ tag 2.1.5). On an air-gapped server, use
 `docker save` / `docker load` and keep the digest, or pass `--image` with a local tag.
 
 ## Validation
@@ -343,9 +343,13 @@ with ionbot ID-based quantification, linked per scan by record id.
 quantify_precursors.py      pipeline (single file, standard library only)
 requirements.txt            no runtime dependencies; pytest for tests
 tests/                      pytest suite + fake_flashlfq.py (FlashLFQ stand-in)
-validation/                 PXD009327 validation report, summary JSON, example output rows
-FlashLFQ-master/            extracted FlashLFQ 2.1.5 source (reference only; not modified)
+validation/                 PXD009327 validation report, summary JSON, example output rows;
+                            PXD002211 comparisons (PXD002211_comparison/) and server results
+PXD009327-example/          one PXD009327 run (MZML, MGF, metadata) for the real-data test
 ```
+
+The FlashLFQ source files cited in this README (`FlashLfqEngine.cs` and others) are in the
+FlashLFQ 2.1.5 / mzLib source on GitHub. They are not part of this repository.
 
 The hidden `--flashlfq-local-cmd "<dotnet> <CMD.dll>"` option runs a local FlashLFQ build
 instead of Docker. It exists only for development and validation, and it logs a warning when

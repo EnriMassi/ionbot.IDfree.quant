@@ -17,7 +17,7 @@ sys.path.insert(0, ROOT)
 import quantify_precursors as qp  # noqa: E402
 
 FAKE_FLASHLFQ = os.path.join(HERE, "fake_flashlfq.py")
-REAL_MZML_DIR = os.path.join(ROOT, "PXD009327", "MZML")
+REAL_MZML_DIR = os.path.join(ROOT, "PXD009327-example", "MZML")
 
 
 # ---------------------------------------------------------------------------
@@ -418,7 +418,7 @@ def test_project_folder_derives_paths(tmp_path):
     (project / "MGF").mkdir()
     args = qp.parse_args(["--project", str(project)])
     assert args.input == str(project / "MZML")
-    assert args.output == str(project / "results")
+    assert args.output == str(project / "IDfree-quant-results")
     assert args.reference_mgf_dir is None                     # MGF folder without .mgf files is ignored
     (project / "MGF" / "a.mgf.gz").write_bytes(b"")
     args = qp.parse_args(["--project", str(project)])
@@ -440,17 +440,21 @@ def test_dry_run_writes_nothing(two_runs, tmp_path, capsys):
 
 
 # ---------------------------------------------------------------------------
-# real data (skipped when PXD009327 is not present)
+# real data (skipped when no PXD009327 mzML file is present; the repository keeps one run)
 # ---------------------------------------------------------------------------
 
-@pytest.mark.skipif(not os.path.isdir(REAL_MZML_DIR), reason="PXD009327/MZML not available")
+@pytest.mark.skipif(not os.path.isdir(REAL_MZML_DIR), reason="PXD009327-example/MZML not available")
 def test_pxd009327_hcd_counts():
     expected = {
         "VEL180306-01_FWeiland180306H01_FW_180307072156.mzML.gz": 10238,
         "VEL180306-03_Fweiland180306H02_FW.mzML.gz": 9554,
         "VEL180306-05_Fweiland180306H03_FW.mzML.gz": 9616,
     }
-    for name, count in expected.items():
+    present = {name: count for name, count in expected.items()
+               if os.path.isfile(os.path.join(REAL_MZML_DIR, name))}
+    if not present:
+        pytest.skip("no PXD009327 mzML file in PXD009327-example/MZML")
+    for name, count in present.items():
         result = qp.extract_file(os.path.join(REAL_MZML_DIR, name), "{run_id}: {native_id}")
         assert len(result.records) == count
         assert all(r.precursor_status == "ok" for r in result.records)

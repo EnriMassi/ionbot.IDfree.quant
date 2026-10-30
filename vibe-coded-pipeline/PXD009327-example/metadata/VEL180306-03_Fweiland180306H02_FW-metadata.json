@@ -1,0 +1,192 @@
+{
+    "FileProperties": [
+        {
+            "accession": "NCIT:C47922",
+            "cvLabel": "NCIT",
+            "name": "Pathname",
+            "value": "/public/conode56/conode54_pride/PRIDE_DATA/PXD009327/RAW/VEL180306-03_Fweiland180306H02_FW.raw"
+        },
+        {
+            "accession": "NCIT:C25714",
+            "cvLabel": "NCIT",
+            "name": "Version",
+            "value": "64"
+        },
+        {
+            "accession": "NCIT:C69199",
+            "cvLabel": "NCIT",
+            "name": "Content Creation Date",
+            "value": "03/06/2018 20:48:19"
+        }
+    ],
+    "InstrumentProperties": [
+        {
+            "accession": "MS:1000494",
+            "cvLabel": "MS",
+            "name": "Thermo Scientific instrument model",
+            "value": "Orbitrap Velos Pro"
+        },
+        {
+            "accession": "MS:1000496",
+            "cvLabel": "MS",
+            "name": "instrument attribute",
+            "value": "Orbitrap Velos Pro"
+        },
+        {
+            "accession": "MS:1000529",
+            "cvLabel": "MS",
+            "name": "instrument serial number",
+            "value": "SN 03244B"
+        },
+        {
+            "accession": "NCIT:C111093",
+            "cvLabel": "NCIT",
+            "name": "Software Version",
+            "value": "2.7.0 SP1"
+        }
+    ],
+    "MsData": [
+        {
+            "accession": "PRIDE:0000481",
+            "cvLabel": "PRIDE",
+            "name": "Number of MS1 spectra",
+            "value": "2351"
+        },
+        {
+            "accession": "PRIDE:0000482",
+            "cvLabel": "PRIDE",
+            "name": "Number of MS2 spectra",
+            "value": "9554"
+        },
+        {
+            "accession": "PRIDE:0000472",
+            "cvLabel": "PRIDE",
+            "name": "MS min charge",
+            "value": "2"
+        },
+        {
+            "accession": "PRIDE:0000473",
+            "cvLabel": "PRIDE",
+            "name": "MS max charge",
+            "value": "11"
+        },
+        {
+            "accession": "PRIDE:0000474",
+            "cvLabel": "PRIDE",
+            "name": "MS min RT",
+            "value": "0.00335666666666667"
+        },
+        {
+            "accession": "PRIDE:0000475",
+            "cvLabel": "PRIDE",
+            "name": "MS max RT",
+            "value": "120.001793333333"
+        },
+        {
+            "accession": "PRIDE:0000476",
+            "cvLabel": "PRIDE",
+            "name": "MS min MZ",
+            "value": "400.055816650391"
+        },
+        {
+            "accession": "PRIDE:0000477",
+            "cvLabel": "PRIDE",
+            "name": "MS max MZ",
+            "value": "1551.64782714844"
+        }
+    ],
+    "ScanSettings": [
+        {
+            "accession": "MS:1000016",
+            "cvLabel": "MS",
+            "name": "scan start time",
+            "value": "0.00335666666666667"
+        },
+        {
+            "accession": "",
+            "cvLabel": "",
+            "name": "expected runtime",
+            "value": "120"
+        },
+        {
+            "accession": "MS:1000011",
+            "cvLabel": "MS",
+            "name": "mass resolution",
+            "value": "0.5"
+        },
+        {
+            "accession": "UO:0000002",
+            "cvLabel": "MS",
+            "name": "mass unit",
+            "value": "None"
+        },
+        {
+            "accession": "PRIDE:0000478",
+            "cvLabel": "PRIDE",
+            "name": "Number of scans",
+            "value": "11905"
+        },
+        {
+            "accession": "PRIDE:0000484",
+            "cvLabel": "PRIDE",
+            "name": "Retention time range",
+            "value": "0.00335666666666667:120.001793333333"
+        },
+        {
+            "accession": "PRIDE:0000485",
+            "cvLabel": "PRIDE",
+            "name": "Mz range",
+            "value": "100:2000"
+        },
+        {
+            "accession": "MS:1000422",
+            "cvLabel": "MS",
+            "name": "beam-type collision-induced dissociation",
+            "value": "HCD"
+        },
+        {
+            "accession": "PRIDE:0000479",
+            "cvLabel": "PRIDE",
+            "name": "MS scan range",
+            "value": "1:11905"
+        }
+    ],
+    "SampleData": [
+        {
+            "accession": "MS:1000001",
+            "cvLabel": "MS",
+            "name": "sample number",
+            "value": "RA3"
+        },
+        {
+            "accession": "NCIT:C41275",
+            "cvLabel": "NCIT",
+            "name": "Vial",
+            "value": "RE4"
+        },
+        {
+            "accession": "AFR:0001577",
+            "cvLabel": "AFO",
+            "name": "injection volume setting",
+            "value": "1"
+        },
+        {
+            "accession": "NCIT:C43378",
+            "cvLabel": "NCIT",
+            "name": "Row",
+            "value": "2"
+        },
+        {
+            "accession": "AFQ:0000178",
+            "cvLabel": "AFO",
+            "name": "dilution factor",
+            "value": "1"
+        },
+        {
+            "accession": "AFR:0002045",
+            "cvLabel": "AFO",
+            "name": "device acquisition method",
+            "value": "C:\\Xcalibur\\methods\\FW\\Methods TMT\\2h-50cm_RIGHT_LOCKOFF_04092013-draw150_height3mm_OTOT_LM.meth"
+        }
+    ]
+}

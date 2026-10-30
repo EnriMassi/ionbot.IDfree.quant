@@ -1271,7 +1271,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     p.add_argument("--project", default=None,
                    help="Project folder (e.g. /data/PXD009327). Derives --input <project>/MZML, "
-                        "--output <project>/results and --reference-mgf-dir <project>/MGF (when it holds MGF files). "
+                        "--output <project>/IDfree-quant-results and --reference-mgf-dir <project>/MGF (when it holds MGF files). "
                         "Explicit --input/--output/--reference-mgf-dir override the derived paths.")
     p.add_argument("--input", default=None, help="Directory with .mzML / .mzML.gz files (read-only).")
     p.add_argument("--output", default=None, help="Output directory (created if missing).")
@@ -1319,7 +1319,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 PROJECT_MZML_DIR = "MZML"
 PROJECT_MGF_DIR = "MGF"
-PROJECT_OUTPUT_DIR = "results"
+PROJECT_OUTPUT_DIR = "IDfree-quant-results"
 
 
 def _find_subdir(parent: str, name: str) -> str | None:
@@ -1335,7 +1335,7 @@ def _find_subdir(parent: str, name: str) -> str | None:
 
 def resolve_project_paths(args: argparse.Namespace) -> None:
     """Fill --input/--output/--reference-mgf-dir from --project (PXD folder layout:
-    <project>/MZML, <project>/MGF, results in <project>/results). Explicit options win."""
+    <project>/MZML, <project>/MGF, results in <project>/IDfree-quant-results). Explicit options win."""
     if args.project:
         project = os.path.abspath(args.project)
         if not os.path.isdir(project):
